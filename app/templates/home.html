@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>King County House Sales Analysis USA</title>
+    <style>
+        /* Overall page styling */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Background image styling */
+        body {
+            background-image: url('https://images8.alphacoders.com/546/546491.jpg');
+            background-size: cover;
+        }
+        
+        /* Main heading styling */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 50px;
+        }
+        
+        /* Form container styling */
+        .form-container {
+            margin: 0 auto;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        /* Form element styling */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        select {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer styling */
+        footer {
+            color: blue;
+            text-align: center;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>King County House Sales Analysis USA</h1>
+
+    <div class="form-container">
+        <form action="/analysis" method="POST">
+            <label for="bedrooms">Select number of bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                {% for bedroom in bedrooms_filter %}
+                    <option value="{{ loop.index }}">{{ bedroom }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="price_range">Select price range:</label>
+            <select id="price_range" name="price_range">
+                {% for i in range(0, price_range_filter|length - 1) %}
+                    <option value="{{ i }}">{{ price_range_filter[i] }} - {{ price_range_filter[i + 1] }}</option>
+                {% endfor %}
+            </select>
+            
+            <input type="submit" value="Submit">
+        </form>
+        <br>Note: It is noteworthy that the optimal outcome is achieved by applying logical combinations of filtered values.  
+        (For instance, if the search criteria include one bedroom, it is recommended to narrow down the price range to a maximum of 1000000-1500000. Attempting to search beyond this range would be illogical and would result in a lack of data availability in the datasets. Therefore, it is imperative to heed these logical guidelines to achieve the best possible results. !!!!!!!!!!!)</br>
+        
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+
+    <footer>
+        From: Sebastian L
+        <br>
+        &copy; 2023 King County House Sales Analysis USA
+    </footer>
+</body>
+</html>
