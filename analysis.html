@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale =1.0">
+    <title>King County House Sales Analysis USA</title>
+    <style>
+        /* Define styles for each section */
+        .section1 {
+            background-image: url('https://images5.alphacoders.com/343/343728.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        
+        .section2 {
+            background-image: url('https://wallpapercave.com/wp/wp2406704.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        
+        .section3 {
+            background-image: url('https://images2.alphacoders.com/153/153330.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        
+        .section4 {
+            background-image: url('https://wallpapercave.com/wp/wp7048129.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        /* Styles for text and images */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            margin-top: 0;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000000;
+            padding-top: 50px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            border: 4px solid white;
+        }
+
+        p {
+            display: block;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <section class="section1">
+        <h1>King County House Sales Analysis USA</h1>
+        <h1>Volume of Deals vs Time</h1>
+        <div style="border: 1px solid black; background-color: white; display: inline-block;">
+            <p>{{ volume_by_month|safe }}</p>
+        </div>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Volume of Deals vs Time">
+    </section>
+    
+    <section class="section2">
+        
+    </section>
+    
+    <section class="section3">
+        <h2>Average Price per Unit vs Time</h2>
+        <div style="border: 1px solid black; background-color: white; display: inline-block;">
+            <p>{{ avg_price_by_month|safe }}</p>
+        </div>
+        <img src="data:image/png;base64,{{ plot_url2 }}" alt="Average Price per Unit vs Time">
+    </section>
+    
+    <section class="section4"></section>
+
+    
+</body>
+<div style="border: 1px solid blue; background-color: greenyellow; display: inline-block; padding: 10px;">
+    <p><i class="fas fa-arrow-left"></i>&nbsp;<a href="http://127.0.0.1:5000/">Back to Home Page</a></p>
+</div>
+
+</html>
